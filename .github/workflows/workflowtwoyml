@@ -6,7 +6,7 @@ on:
     types:
       - opened
       - closed
-  
+
 jobs:
   print-event:
     runs-on: ubuntu-latest
