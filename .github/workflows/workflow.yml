@@ -1,0 +1,15 @@
+on:
+  push:
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print the event that triggered this workflow
+        run: |
+          echo push on dev
+
+      - name: Print the current time
+        run: |
+          echo $(date)
