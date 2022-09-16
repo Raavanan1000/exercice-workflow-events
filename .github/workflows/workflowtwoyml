@@ -3,12 +3,14 @@ on:
 
 on:
   pull_request:
+    types:
+      - opened
+      - closed
   
-
 jobs:
   print-event:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Print the event that triggered this workflow
         run: |
