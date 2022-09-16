@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the event that triggered this workflow
+        run: |
+          echo push on dev
