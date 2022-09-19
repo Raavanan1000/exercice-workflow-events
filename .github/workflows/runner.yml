@@ -1,0 +1,35 @@
+#Write a workflow that installs dependancies and runs the test. Specify a default folder for all the steps inside the job.
+#Create a matrix strategy for a node js app that will install dependancies for node 12, 14, 16
+#Create a second matrix strategy to test the node app on ubuntu and windows
+
+
+name: Runner
+
+on:
+  push:
+    branches:
+      - "dev"
+
+jobs:
+  install-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./node-app
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Install dependancies
+        run: npm install
+      - name: Run tests
+        run: npm test
