@@ -31,8 +31,10 @@ jobs:
           cache: 'npm'
       - name: Install dependancies
         run: |
+              pwd
               cd node-app
+              echo "after"
               npm install
-              
+
       - name: Run tests
         run: npm test
