@@ -2,14 +2,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  print-event:
+  print:
     runs-on: ubuntu-latest
-
     steps:
       - name: Print the event that triggered this workflow
         run: |
-          echo ${{ github.event_name }}
-
-      - name: Print the current time
-        run: |
-          echo $(date)
+          echo push on dev
