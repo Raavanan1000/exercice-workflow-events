@@ -2,9 +2,6 @@ name: Events exercices
 
 on:
   push:
-    branches:
-      - "dev"
-      - "!stages"
 
   schedule:
     - '*/1 * * * *'
