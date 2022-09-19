@@ -16,6 +16,9 @@ jobs:
     strategy:
       matrix:
         node: [ 14, 16, 18 ]
+    defaults:
+      run:
+        working-directory: node-app
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v3
