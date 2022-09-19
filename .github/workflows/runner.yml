@@ -13,9 +13,6 @@ on:
 jobs:
   install-test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./node-app
 
     strategy:
       matrix:
