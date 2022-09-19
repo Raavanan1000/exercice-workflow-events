@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Enter node-app
-        run: cd node-app
+        working-directory: ./node-app
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
