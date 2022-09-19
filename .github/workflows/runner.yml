@@ -19,11 +19,10 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
         os: [ubuntu-latest, windows-latest]
 
-    steps:
-      - name: Enter node-app
-        working-directory: ./node-app
+    steps: 
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
+        working-directory: ./node-app
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
